@@ -22,7 +22,7 @@ public class CircleApp2 {
 		/* 
 		* Calculate the first circle.
 		*/
-		// Step 1 prompt the user for the radius of the first circle.
+		// Step 1: prompt the user for the radius of the first circle.
 		System.out.println("Enter the radius of the 1st circle:"); 
 		// Declare a variable to store the user input.
 		// Step 2: Read a floating-point number from the user.
@@ -40,7 +40,7 @@ public class CircleApp2 {
 		/* 
 		* Calculate the second circle.
 		*/
-		// Step 1 prompt the user for the radius of the first circle.
+		// Step 1: prompt the user for the radius of the first circle.
 		System.out.println("Enter the radius of the 2nd circle:"); 
 		// Declare a variable to store the user input.
 		// Step 2: Read a floating-point number from the user.

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import model.Circle;
 
-public class TestCirccle {
+public class TestCircle {
 	/*
 	 * Each test method corresponds to a manual
 	 * launch and interaction with the CircleApp2.
