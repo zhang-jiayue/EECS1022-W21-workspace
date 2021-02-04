@@ -14,6 +14,8 @@ public class SequenceApp {
 		int d = input.nextInt();
 		
 		// Stage 2: Compute the result
+		int term1 = ft;
+		int term2 = ft + d;	// term1 +d
 		
 		// Stage 3: Output the result to console
 		
