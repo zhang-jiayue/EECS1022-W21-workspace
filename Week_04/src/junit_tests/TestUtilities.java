@@ -20,7 +20,7 @@ public class TestUtilities {
 	}
 	@Test
 	public void test_getSequence2a() {
-		String result = Utilities.getSequence2a(3, 5, 20);
+		String result = Utilities.getSequence2a(3, 5, 20); // arguments
 		assertEquals("<3 8 13 18 > has average 10.5", result);
 	}
 	@Test
