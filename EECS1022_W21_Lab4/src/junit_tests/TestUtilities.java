@@ -94,6 +94,14 @@ public class TestUtilities {
 		assertArrayEquals(expected, result);
 	}
 	
+	@Test
+	public void test_getFilteredSeq_07() {
+		int[] input = {1, 8, 9, 123, 456, 76};
+		int[] result = Utilities.getFilteredSeq(input, 5);
+		int[] expected = {1, 8, 9, 123, 456, 76};
+		assertArrayEquals(expected, result);
+	}
+	
 	/*
 	 * Tests related to getAllPrefixes
 	 */
@@ -134,6 +142,14 @@ public class TestUtilities {
 		int[] input = {3, 1, 4, 5, 7};
 		String[] result = Utilities.getAllPrefixes(input);
 		String[] expected = {"[3]", "[3, 1]", "[3, 1, 4]", "[3, 1, 4, 5]", "[3, 1, 4, 5, 7]"};
+		assertArrayEquals(expected, result);
+	}
+	
+	@Test
+	public void test_getAllPrefixes_06() {
+		int[] input = {6, 1, 4, 5, 7, 10};
+		String[] result = Utilities.getAllPrefixes(input);
+		String[] expected = {"[6]", "[6, 1]", "[6, 1, 4]", "[6, 1, 4, 5]", "[6, 1, 4, 5, 7]", "[6, 1, 4, 5, 7, 10]"};
 		assertArrayEquals(expected, result);
 	}
 	
