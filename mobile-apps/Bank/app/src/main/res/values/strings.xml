@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bank App - Jiayue Zhang (217759168)</string>
+
+    <string-array name="types">
+        <item>Deposit</item>
+        <item>Withdraw</item>
+        <item>Transfer</item>
+        <item>Print Statement</item>
+
+    </string-array>
+</resources>

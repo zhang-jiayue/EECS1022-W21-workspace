@@ -38,6 +38,11 @@ public class OnlineSchool {
 	}
 	
 	
+	public Participant[] getParticipants() {
+		return this.participant;
+	}
+	
+	
 	// Mutator methods
 		public void addParticipant(Participant p) {
 			if(this.nop < MAX_OF_PARTICIPANTS){

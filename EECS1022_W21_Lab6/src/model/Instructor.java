@@ -5,14 +5,14 @@ public class Instructor {
 	private int phone;
 	private String email;
 	
-	
-	//accssor methods
 	public Instructor(String name, int phone, String email) {
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
 	}
 	
+	//accssor methods
+
 	public String getName() {
 		return this.name;
 	}

@@ -380,4 +380,21 @@ public class TestOnlineSchool {
 	/* You may want to write a test similar to test03b: 
 	 * an online school can be added up to 100 participants. 
 	 */
+	@Test
+	public void test_05() {
+		OnlineSchool yorku = new OnlineSchool();
+		for(int i = 0; i < 120; i ++) {
+			yorku.addParticipant(new Participant(String.format("Participant%d", i)));
+			if(i <  100) {
+				assertTrue(yorku.getParticipants().length == i + 1);
+			}
+		}
+		
+		/* Maximum number of participants allowed is 100.
+		 * Adding beyond the maximum capacity will have no effect. 
+//		 */
+
+		assertTrue(yorku.getParticipants().length == 100);
+
+	}
 }
