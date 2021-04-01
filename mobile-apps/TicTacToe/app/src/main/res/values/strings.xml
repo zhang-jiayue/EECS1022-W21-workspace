@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TicTacToe App - Jiayue Zhang (217759168)</string>
+    <string-array name="players">
+        <item>Player X</item>
+        <item>Player O</item>
+
+
+    </string-array>
+</resources>
