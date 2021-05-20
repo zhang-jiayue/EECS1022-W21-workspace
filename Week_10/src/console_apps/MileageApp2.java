@@ -1,6 +1,5 @@
 package console_apps;
 
-import java.awt.geom.CubicCurve2D;
 import java.util.Scanner;
 
 public class MileageApp2 {

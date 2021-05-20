@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     /* Hint: How do you share the same game object between button clicks
      * (attached with controller methods) of the app?
      */
-    Game g;
+    public Game g;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         /* Hint: How do you display the initial status to the output textview
          * when the app is first launched?
          */
+        setContentsOfTextView(R.id.Output, "No game has been started.");
     }
 
     /* this mutator sets the output label */
@@ -82,13 +83,17 @@ public class MainActivity extends AppCompatActivity {
         }
         g = new Game(playerX, playerO);
         g.setWhoPlaysFirst(first);
+        String currentBoard = g.printBoard();
+        setContentsOfTextView(R.id.Output, currentBoard + "\n" + "Current Game Status:\n" + g.getStatus());
 
     }
 
     public void moveButtonClicked(View view){
-        int row = Integer.parseInt(getInputOfTextField(R.id.inputRowNumber);
-        int col = Integer.parseInt(getInputOfTextField(R.id.inputColNumber);
+        int row = Integer.parseInt(getInputOfTextField(R.id.inputRowNumber));
+        int col = Integer.parseInt(getInputOfTextField(R.id.inputColNumber));
         g.move(row, col);
+        String currentBoard = g.printBoard();
+        setContentsOfTextView(R.id.Output, currentBoard + "\n" + "Current Game Status:\n" + g.getStatus());
 
 
 

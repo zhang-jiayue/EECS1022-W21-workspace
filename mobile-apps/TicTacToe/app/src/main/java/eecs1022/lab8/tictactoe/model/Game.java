@@ -8,6 +8,10 @@ public class Game {
     private String status;
     private char[][] board;
 
+    public Game(){
+
+    }
+
     public Game(String p1, String p2){
         this.playerX = p1;
         this.playerO = p2;
@@ -31,6 +35,18 @@ public class Game {
 
     public char[][] getBoard(){
         return this.board;
+    }
+
+    public String printBoard(){
+        String result = "Current Game Board:\n";
+        for(int i = 0; i < this.board.length; i ++){
+            for(int j = 0; j < this.board[0].length; j++){
+                result += this.board[i][j] + " ";
+            }
+            result += "\n";
+        }
+
+        return result;
     }
 
     public boolean isValid(int num){
@@ -59,7 +75,7 @@ public class Game {
     public void checkWinner(){
         //check each row
         boolean sameRow = false;
-        for(int row = 0; row <2; row ++){
+        for(int row = 0; row <3; row ++){
             if(this.board[row][0] == this.board[row][1] &&  this.board[row][1] ==this.board[row][2] && this.board[row][0] != '_'){
                 sameRow = true;
             }
@@ -73,7 +89,7 @@ public class Game {
 
         // check each column
         boolean sameColumn = false;
-        for(int column = 0; column <2; column ++){
+        for(int column = 0; column <3; column ++){
             if(this.board[0][column] == this.board[1][column] &&  this.board[1][column] == this.board[2][column]&& this.board[0][column] != '_'){
                 sameColumn = true;
             }
@@ -145,14 +161,20 @@ public class Game {
             }
 
             checkWinner();
-            if(winner == null){
+            if(this.winner != null){
+
+            }
+            if(this.winner == null){
                 this.status = this.currentPlayer + "'s turn to play...";
             }
 
             notFull = fullBoard();
             if(!notFull){
                 this.currentPlayer = null;
-                status = "Game is over with a tie between " + playerX + " and " + playerO +".";
+                if(this.winner == null){
+                    status = "Game is over with a tie between " + playerX + " and " + playerO +".";
+
+                }
             }
         }
 

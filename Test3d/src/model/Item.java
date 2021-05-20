@@ -1,48 +1,57 @@
 package model;
 
 public class Item {
-	String name;
-	int amount;
-	String info;
+	private String title;
+	private int amount;
+	private String info;
 	
 	public Item(String name) {
-		this.name = name;
-		this.info = String.format("Item: %s (%d)", this.name, this.amount);
+		this.title = name;
 	}
 	
+	
 	public String getTitle() {
-		return this.name;
+		return this.title;
 	}
 	
 	public int getAmount() {
 		return this.amount;
 	}
 	
+
 	public String getInfo() {
 		return this.info;
 	}
 	
+	public void updateInfo() {
+		this.info = String.format("Item: %s (%d)", this.title, this.amount);
+	}
 	
-	public void increaseAmount(int num) {
-		if(num <= 0) {
-			this.info = String.format("Error: non-positive amount %d", num);
+	public void increaseAmount(int units) {
+		if(units <= 0) {
+			this.info = String.format("Error: non-positive amount %d", units);
 		}
 		else {
-			this.amount += num;
-			this.info = String.format("Item: %s (%d)", this.name, this.amount);
+			this.amount += units;
+			this.updateInfo();
 		}
 	}
 	
-	public void decreaseAmount(int num) {
-		if(num <= 0) {
-			this.info = String.format("Error: non-positive amount %d", num);
+	public void decreaseAmount(int units) {
+		if(units <= 0) {
+			this.info = String.format("Error: non-positive amount %d", units);
 		}
-		else if(this.amount - num < 0) {
-			this.info = String.format("Error: amount is short of %d", num - this.amount);
+		else if (this.amount >= units){
+			this.amount -= units;
+			this.updateInfo();
 		}
 		else {
-			this.amount -= num;
-			this.info = String.format("Item: %s (%d)", this.name, this.amount);
+			this.info = String.format("Error: amount is short of %d", units);
 		}
 	}
+	
+	
+	
+	
+
 }
